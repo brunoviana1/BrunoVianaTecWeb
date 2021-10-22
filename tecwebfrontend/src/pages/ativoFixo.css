@@ -1,0 +1,28 @@
+.Ativo{
+    text-align: center;
+    background-color: rgb(153, 255, 255);
+    height: 100vh;
+
+}
+
+.titulo{
+  color: rgb(0, 0, 0);
+
+}
+
+label{ 
+  display: block;
+  margin-top: 16px;
+
+}
+
+button{
+  display: block;
+  margin: 0 auto;
+  margin-top: 16px;
+
+}
+
+
+
+
