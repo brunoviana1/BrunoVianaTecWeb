@@ -7,6 +7,7 @@ function AtivoFixo() {
     <div className ='Ativo' >  
     <h1 className= 'titulo'> Cadastro de Ativos </h1>
     <form>
+      
       <label>Descrição: </label>     
       <input type='text' ></input>
 
@@ -21,14 +22,21 @@ function AtivoFixo() {
 
       <label>ID do Colaborador: </label>
       <input type='text' ></input>
+      
 
       <button type='submit'>Salvar</button>
 
+      <h1 className= 'titulo'>  Ativos: </h1>
+
     </form>
 
+      
+        
     </div>
 
   );
+
+  
 
 
 }
