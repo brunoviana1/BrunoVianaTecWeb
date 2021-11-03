@@ -1,24 +1,60 @@
-import React from 'react';
-import './ativoFixo.css';
 
+import './ativoFixo.css';
+import React, { useEffect, useState } from 'react';
+import api from '../services/api';
 
 function AtivoFixo() {
+
+  const[localizacao, setLocalizacao] = useState("");
+  const[descricao, setDescricao] = useState("");
+  const[numeroPatrimonio,  setPatrimonio] = useState("");
+  const[modelo, setModelo] = useState("");
+  const[ativos, setAtivos] = useState([]);
+
+  async function getAtivo() {
+    const resposta =  await api.get('/ativo');
+    //setPerfis([{"descricao": "teste"}, {"descricao": "teste3"}]);
+    setAtivos(resposta.data);
+};
+
+useEffect(() => {
+    getAtivo();
+}, []);
+
+ 
   return (
     <div className ='Ativo' >  
     <h1 className= 'titulo'> Cadastro de Ativos </h1>
     <form>
       
       <label>Descrição: </label>     
-      <input type='text' ></input>
+      <input 
+      name="descricao"
+      value={descricao}
+      onChange={ e => setDescricao(e.target.value)}
+      type='text' ></input>
 
-      <label>localização: </label>
-      <input type='text' ></input>
+          <label>localização: </label>
+      <input 
+      name="localizacao"
+      value={localizacao}
+      onChange={ e => setLocalizacao(e.target.value)}
+      type='text' ></input>
 
       <label>Numero de Patrimonio: </label>
-      <input type='text' ></input>
-
+      <input 
+      name="numeroPatrimonio"
+      value={numeroPatrimonio}
+      onChange={ e => setPatrimonio(e.target.value)}
+      
+      type='text' ></input>
       <label>Modelo: </label>
-      <input type='text' ></input>
+      <input
+       name="modelo"
+       value={modelo}
+       onChange={ e => setModelo(e.target.value)}
+      
+      type='text' ></input>
 
       <label>ID do Colaborador: </label>
       <input type='text' ></input>
@@ -26,10 +62,17 @@ function AtivoFixo() {
 
       <button type='submit'>Salvar</button>
 
-      <h1 className= 'titulo'>  Ativos: </h1>
+    
 
     </form>
 
+    <h1>Lista de Ativos</h1>
+                    <div>
+                         {ativos.map(ativo => (
+                              <div  key={ativo.id}>{ativo.id}: {ativo.descricao} - {ativo.numeroPatrimonio} - {ativo.modelo} - {ativo.localizacao}</div>
+                         ))}
+                   
+                    </div>
       
         
     </div>
