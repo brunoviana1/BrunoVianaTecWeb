@@ -9,11 +9,11 @@ function AtivoFixo() {
   const[descricao, setDescricao] = useState("");
   const[numeroPatrimonio,  setPatrimonio] = useState("");
   const[modelo, setModelo] = useState("");
+  const[idcolab, setIdcolab] = useState([]);
   const[ativos, setAtivos] = useState([]);
 
   async function getAtivo() {
-    const resposta =  await api.get('/ativo');
-    //setPerfis([{"descricao": "teste"}, {"descricao": "teste3"}]);
+    const resposta =  await api.get('/ativo');   
     setAtivos(resposta.data);
 };
 
@@ -45,9 +45,9 @@ useEffect(() => {
       <input 
       name="numeroPatrimonio"
       value={numeroPatrimonio}
-      onChange={ e => setPatrimonio(e.target.value)}
-      
+      onChange={ e => setPatrimonio(e.target.value)}      
       type='text' ></input>
+
       <label>Modelo: </label>
       <input
        name="modelo"
@@ -57,8 +57,23 @@ useEffect(() => {
       type='text' ></input>
 
       <label>ID do Colaborador: </label>
-      <input type='text' ></input>
+      <input 
+       name="IdColaborador"
+       value={idcolab}
+       onChange={ e => setIdcolab(e.target.value)}
+       type='text' ></input>
+       
       
+      <br/><br/>
+        Descrição =  {descricao}
+        <br/>
+        Localização =  {localizacao}
+        <br/>
+        Numero de Patrimonio  =  {numeroPatrimonio}
+        <br/>
+        Modelo  =  {modelo}
+        <br/>
+        ID do Colaborador  =  {idcolab}
 
       <button type='submit'>Salvar</button>
 
