@@ -61,7 +61,7 @@ useEffect(() => {
        name="IdColaborador"
        value={idcolab}
        onChange={ e => setIdcolab(e.target.value)}
-       type='text' ></input>
+       type='number' ></input>
        
       
       <br/><br/>
