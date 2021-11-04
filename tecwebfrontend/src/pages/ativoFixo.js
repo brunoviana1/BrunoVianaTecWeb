@@ -21,6 +21,29 @@ useEffect(() => {
     getAtivo();
 }, []);
 
+async function save() {
+       
+  let data = {
+    descricao: descricao,
+    localizacao: localizacao,
+    numeroPatrimonio: numeroPatrimonio,
+    modelo: modelo,
+    idcolab: idcolab
+         
+  };
+
+  const response = await api.post('/ativo', data);
+
+
+  if(response.status === 200 && response.data) {
+     console.log("OK");
+     getAtivo();
+       }else {
+          console.log("Error ->", JSON.stringify(response));
+  }
+
+};
+
  
   return (
     <div className ='Ativo' >  
@@ -62,8 +85,7 @@ useEffect(() => {
        value={idcolab}
        onChange={ e => setIdcolab(e.target.value)}
        type='number' ></input>
-       
-      
+             
       <br/><br/>
         Descrição =  {descricao}
         <br/>
@@ -75,11 +97,9 @@ useEffect(() => {
         <br/>
         ID do Colaborador  =  {idcolab}
 
-      <button type='submit'>Salvar</button>
+      <button onClick={save}>Salvar</button>
 
-    
-
-    </form>
+   </form>
 
     <h1>Lista de Ativos</h1>
                     <div>
