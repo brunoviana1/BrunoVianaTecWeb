@@ -28,11 +28,15 @@ async function save() {
     localizacao: localizacao,
     numeroPatrimonio: numeroPatrimonio,
     modelo: modelo,
-    idcolab: idcolab
+    idColaborador: idcolab
          
   };
 
+
   const response = await api.post('/ativo', data);
+  console.log("Resposta ", JSON.stringify(response));
+  console.log("DATA request ", JSON.stringify(data));
+  
 
 
   if(response.status === 200 && response.data) {
