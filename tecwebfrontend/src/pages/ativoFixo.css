@@ -1,18 +1,23 @@
 .Ativo{
-    text-align: center;
+  text-align: center;
+  background-color:#faf5f4;
      
  
 
 }
 
 .titulo{
-  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-family: cursive;
+  background-color: #483D8B;
+  min-width: 10vh;  
+  color: #000000;
 
 }
 
 label{ 
   display: block;
-  margin-top: 10px;
+  margin-top: 5px;
 
 }
 
