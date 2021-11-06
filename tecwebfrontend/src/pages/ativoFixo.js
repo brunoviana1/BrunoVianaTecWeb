@@ -52,7 +52,7 @@ async function save() {
   return (
     <div className ='Ativo' >  
     <h1 className= 'titulo'> Cadastro de Ativos </h1>
-    <form>
+    <form>                 
       
       <label>Descrição: </label>     
       <input 
@@ -61,7 +61,7 @@ async function save() {
       onChange={ e => setDescricao(e.target.value)}
       type='text' ></input>
 
-          <label>localização: </label>
+      <label>localização: </label>
       <input 
       name="localizacao"
       value={localizacao}
