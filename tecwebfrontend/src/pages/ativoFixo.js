@@ -4,6 +4,12 @@ import React, { useEffect, useState } from 'react';
 import api from '../services/api';
 
 function AtivoFixo() {
+  const[active, setMode] = useState(false);
+  const ToggleMode =() =>{
+    setMode(!active)
+
+  }
+
 
   const[localizacao, setLocalizacao] = useState("");
   const[descricao, setDescricao] = useState("");
@@ -51,9 +57,9 @@ async function save() {
  
   return (
     <div className ='Ativo' >  
-    <h1 className= 'titulo'> Cadastro de Ativos </h1>
+    <h1 className= 'titulo'> Cadastro de Ativos </h1>    
+
     <form>                 
-      
       <label>Descrição: </label>     
       <input 
       name="descricao"

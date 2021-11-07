@@ -8,10 +8,11 @@
 
 .titulo{
   font-size: 30px;
+  height: 60px;  
   font-family: cursive;
   background-color: #483D8B;
   min-width: 10vh;  
-  color: #000000;
+  color: #fafafa;
 
 }
 
@@ -45,4 +46,11 @@ button:hover {
   color: white;
 }
 
+input{
+  border-radius: 8px;
+  border: 4px slateblue #483D8B;
+  box-shadow:  3px 3px 15px #483D8B;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
