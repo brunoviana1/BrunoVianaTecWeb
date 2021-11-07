@@ -54,3 +54,15 @@ input{
   padding-right: 10px;
 }
 
+body::-webkit-scrollbar{
+  width: 12px;
+}
+
+::-webkit-scrollbar-track{
+  background: #808080;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #7B68EE;
+  border-radius: 8px;
+}
