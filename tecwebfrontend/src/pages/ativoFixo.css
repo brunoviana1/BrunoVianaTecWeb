@@ -1,10 +1,7 @@
 .Ativo{
   text-align: center;
-  background-color:#faf5f4;
-     
- 
-
-}
+  background-color:#faf5f4;  
+ }
 
 .titulo{
   font-size: 30px;
@@ -12,14 +9,12 @@
   font-family: cursive;
   background-color: #483D8B;
   min-width: 10vh;  
-  color: #fafafa;
-
+  color: #fafafa;  
 }
 
 label{ 
   display: block;
   margin-top: 5px;
-
 }
 
 button{   
@@ -37,8 +32,7 @@ button{
   padding: 5px 10px;
   transition-duration: 0.6s;
   outline-color: #363636;
-  outline-style: auto;
-  
+  outline-style: auto;  
 }
 
 button:hover {
@@ -63,6 +57,6 @@ body::-webkit-scrollbar{
 }
 
 ::-webkit-scrollbar-thumb{
-  background: #7B68EE;
+  background: #483D8B;
   border-radius: 8px;
 }
