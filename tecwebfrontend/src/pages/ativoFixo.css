@@ -37,16 +37,62 @@ label{
 
 .buttonD{
 
-
-
-
+  margin: 0 auto;
+  margin-top: 16px;
+  border-radius: 10px;
+  outline: none;
+  color: #000000;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: cursive;
+  text-decoration: none;
+  padding: 2px 4px;
+  transition-duration: 0.6s;
+  outline-color: #363636;
+  outline-style: auto;  
+  background-color: #FA8072
+  
+  
+  
  }
+
+
+ .buttonF{
+
+  margin: 0 auto;
+  margin-top: 16px;
+  border-radius: 10px;
+  outline: none;
+  color: #000000;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: cursive;
+  text-decoration: none;
+  padding: 2px 4px;
+  transition-duration: 0.6s;
+  outline-color: #363636;
+  outline-style: auto;  
+  background-color: #DB7093
+}
 
  
 button:hover {
   background-color: #4CAF50; 
   color: white;
 }
+
+.buttonD:hover{
+  
+    background-color: #B22222; 
+    color: white;
+  }
+
+  .buttonF:hover{
+  
+    background-color: #C71585; 
+    color: white;
+  }
+
 
 input{
   border-radius: 8px;

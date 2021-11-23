@@ -157,7 +157,7 @@ async function getAtivoID(id) {
     <h1>Lista de Ativos</h1>
                     <div>
                          {ativos.map(ativo => (
-                              <div  key={ativo.id}>{ativo.id}: {ativo.descricao} - {ativo.numeroPatrimonio} - {ativo.modelo} - {ativo.localizacao} <button className='buttonF' onClick={()=> getAtivoID(ativo.id)} > Editar</button> <button className='buttonD' onClick={()=> deletar(ativo.id)} > Delelar</button></div>
+                              <div  key={ativo.id}>{ativo.id}: {ativo.descricao} - {ativo.numeroPatrimonio} - {ativo.modelo} - {ativo.localizacao} <button className='buttonF' onClick={()=> getAtivoID(ativo.id)} > Editar</button> <button className='buttonD' onClick={()=> deletar(ativo.id)} > Deletar</button></div>
                          ))}
                    
                     </div>
