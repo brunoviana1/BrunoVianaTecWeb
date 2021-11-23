@@ -10,7 +10,7 @@ function AtivoFixo() {
 
   }
 
-
+  const[idAtivo, setIDAtivo] = useState("");
   const[localizacao, setLocalizacao] = useState("");
   const[descricao, setDescricao] = useState("");
   const[numeroPatrimonio,  setPatrimonio] = useState("");
@@ -38,8 +38,13 @@ async function save() {
          
   };
 
+  
 
-  const response = await api.post('/ativo', data);
+
+  const response =  idAtivo
+  ? await api.put('/ativo', data) 
+  : await api.post('/ativo', data);  
+
   console.log("Resposta ", JSON.stringify(response));
   console.log("DATA request ", JSON.stringify(data));
   
@@ -48,10 +53,47 @@ async function save() {
   if(response.status === 200 && response.data) {
      console.log("OK");
      getAtivo();
+     setLocalizacao('');
+      setDescricao('');
+      setPatrimonio('');
+      setModelo('');
+      setIdcolab('');
+      setIDAtivo('');
        }else {
           console.log("Error ->", JSON.stringify(response));
   }
 
+};
+
+
+async function deletar(id) {                
+
+
+  const response = await api.delete(`/ativo/${id}`);
+   
+  if(response.status === 200 && response.data) {
+     console.log("OK");
+     getAtivo();
+       }else {
+          console.log("Error ->", JSON.stringify(response));
+  }
+
+};
+
+async function getAtivoID(id) {
+  const resposta =  await api.get(`/ativo/findID/${id}`);   
+  console.log('resposta ativo', resposta.data);
+
+  if(resposta.status === 200 && resposta.data) {
+      setLocalizacao(resposta.data.localizacao);
+      setDescricao(resposta.data.descricao);
+      setPatrimonio(resposta.data.numeroPatrimonio);
+      setModelo(resposta.data.modelo);
+      setIdcolab(5);
+      setIDAtivo(resposta.data.id);
+      
+
+  }
 };
 
  
@@ -107,14 +149,15 @@ async function save() {
         <br/>
         ID do Colaborador  =  {idcolab}
 
-      <button onClick={save}>Salvar</button>
+      <button className='buttonS' type='button' onClick={save}>Salvar</button>
+
 
    </form>
 
     <h1>Lista de Ativos</h1>
                     <div>
                          {ativos.map(ativo => (
-                              <div  key={ativo.id}>{ativo.id}: {ativo.descricao} - {ativo.numeroPatrimonio} - {ativo.modelo} - {ativo.localizacao}</div>
+                              <div  key={ativo.id}>{ativo.id}: {ativo.descricao} - {ativo.numeroPatrimonio} - {ativo.modelo} - {ativo.localizacao} <button className='buttonF' onClick={()=> getAtivoID(ativo.id)} > Editar</button> <button className='buttonD' onClick={()=> deletar(ativo.id)} > Delelar</button></div>
                          ))}
                    
                     </div>

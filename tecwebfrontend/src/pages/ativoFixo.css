@@ -17,7 +17,7 @@ label{
   margin-top: 5px;
 }
 
-button{   
+.buttonS{   
   display: block;
   margin: 0 auto;
   margin-top: 16px;
@@ -35,6 +35,14 @@ button{
   outline-style: auto;  
 }
 
+.buttonD{
+
+
+
+
+ }
+
+ 
 button:hover {
   background-color: #4CAF50; 
   color: white;
