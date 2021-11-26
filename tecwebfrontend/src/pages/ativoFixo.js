@@ -42,7 +42,7 @@ async function save() {
 
 
   const response =  idAtivo
-  ? await api.put('/ativo', data) 
+  ? await api.put(`/ativo/${idAtivo}`, data) 
   : await api.post('/ativo', data);  
 
   console.log("Resposta ", JSON.stringify(response));
